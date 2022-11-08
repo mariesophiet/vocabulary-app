@@ -30,7 +30,7 @@ class UpdateWord extends Component {
         return <Update onClick={this.updateUser}>Update</Update>
     }
 }
-
+// TODO: Find out why Delete throws error
 class DeleteWord extends Component {
     deleteUser = event => {
         event.preventDefault()
