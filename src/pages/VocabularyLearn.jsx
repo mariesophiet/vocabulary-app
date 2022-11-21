@@ -23,9 +23,16 @@ const Check = styled.div`
 `
 
 const Lang = styled.div`
-    padding:100px;
+    line-height: 250px;
     background-color:#decddd;
     font-size: 40px;
+    height: 250px;
+`
+
+const Show = styled.div`
+    padding: 20px;
+    background-color: red;
+    cursor: pointer;
 `
 
 class VocabularyLearn extends Component {
@@ -34,7 +41,8 @@ class VocabularyLearn extends Component {
         this.state = {
             words: [],
             current: '',
-            index: 1,
+            translation: '',
+            index: 0,
             isLoading: false,
         }
     }
@@ -47,28 +55,44 @@ class VocabularyLearn extends Component {
             this.setState({
                 words: words.data.data,
                 current: words.data.data[0].lang_1,
+                index: 0,
+                translation: '',
                 isLoading: false,
             })
         })
     }
 
-    handleClickNext(){
-        this.setState({index: this.state.index + 1});
-
+    // load the next word from vocabulary
+    handleClickNext(){        
          // check if index gets too big -> we are at the end of our vocabulary list, reload
-         if (!this.state.words[this.state.index]){
+         if (!this.state.words[this.state.index + 1]){
             window.confirm(
-                `You have reached the end of your vacabulary list!`,
+                `You have reached the end of your vocabulary list!`,
             )
+            this.setState({
+                index: 0,
+                translation: '',
+                current: this.state.words.data.data[0].lang_1
+            })
             window.location.reload()
         }
-        this.setState({current: this.state.words[this.state.index].lang_1});
+        // clear possible translation from word before
+        this.setState({
+            current: this.state.words[this.state.index + 1].lang_1,
+            index: this.state.index + 1,
+            translation: ''});        
+    }
+
+    // load translation of the current word
+    handleClickShow() {
+        this.setState({translation: this.state.words[this.state.index].lang_2});
     }
 
     
     render() {
         const word = this.state.current
-        console.log(this.state.current)
+        const transl = this.state.translation
+        console.log(word)
 
         return (
             <Wrapper>
@@ -79,16 +103,19 @@ class VocabularyLearn extends Component {
                     </div>
                     <div class="column">
                         <h1>Spanish</h1>
-                        <Lang id="esp">Fill</Lang>
+                        <Lang id="esp">{transl}</Lang>
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="column">
+                    <div class="column_3">
                         <Check>Check</Check>
                     </div>
-                    <div class="column">
+                    <div class="column_3">
                         <Next onClick={this.handleClickNext.bind(this)}>Next Word</Next>
+                    </div>
+                    <div class="column_3">
+                        <Show onClick={this.handleClickShow.bind(this)}>Show Translation</Show>
                     </div>
                 </div>
             </Wrapper>

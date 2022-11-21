@@ -43,7 +43,10 @@
   flex: 50%;
 }
 
-/* Clear floats after the columns */
+.column_3 {
+  flex: 33.3%;
+}
+
 .row {
   display: flex;
   padding: 20px;
