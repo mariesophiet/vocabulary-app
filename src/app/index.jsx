@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { NavBar } from '../components'
-import { VocabularyList, VocabularyInsert, VocabularyUpdate } from '../pages'
+import { VocabularyList, VocabularyInsert, VocabularyUpdate, VocabularyLearn } from '../pages'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -18,6 +18,7 @@ function App() {
                     exact
                     component={VocabularyUpdate}
                 />
+                <Route path="/vocabulary/learn" exact component={VocabularyLearn} />
             </Switch>
         </Router>
     )

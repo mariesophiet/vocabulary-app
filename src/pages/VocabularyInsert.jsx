@@ -104,9 +104,9 @@ class VocabularyInsert extends Component {
 
                 <Label>Spanisch: </Label>
                 <InputText
-                    type="number"
+                    type="text"
                     value={lang_2}
-                    onChange={this.handleChangeInputRating}
+                    onChange={this.handleChangeInputLang2}
                 />
 
                 <Label>Level: </Label>

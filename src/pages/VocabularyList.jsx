@@ -37,7 +37,7 @@ class DeleteWord extends Component {
 
         if (
             window.confirm(
-                `Do tou want to delete the word ${this.props.id} permanently?`,
+                `Do you want to delete the word ${this.props.id} permanently?`,
             )
         ) {
             api.deleteWord(this.props.id)
@@ -72,7 +72,7 @@ class VocabularyList extends Component {
     }
 
     render() {
-        const { words: words, isLoading } = this.state
+        const { words, isLoading } = this.state
         console.log('TCL: VocabularyList -> render -> words', words)
 
         const columns = [
