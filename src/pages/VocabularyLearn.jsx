@@ -3,15 +3,29 @@ import ReactTable from 'react-table'
 import api from '../api'
 
 import styled from 'styled-components'
+import '../App.css'
 
 import 'react-table/react-table.css'
 
 const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
+    text-align: center;
 `
 const Next = styled.div`
-    color: #ef9b0f;
     cursor: pointer;
+    padding: 20px;
+    background-color: pink;
+`
+const Check = styled.div`
+    cursor: pointer;
+    padding: 20px;
+    background-color: #FF62DF;
+`
+
+const Lang = styled.div`
+    padding:100px;
+    background-color:#decddd;
+    font-size: 40px;
 `
 
 class VocabularyLearn extends Component {
@@ -20,14 +34,13 @@ class VocabularyLearn extends Component {
         this.state = {
             words: [],
             current: '',
-            index: 0,
+            index: 1,
             isLoading: false,
         }
     }
 
     componentDidMount = async () => {
         this.setState({ isLoading: true,
-                        index: 0,
          })
 
         await api.getVocabulary().then(words => {
@@ -50,18 +63,33 @@ class VocabularyLearn extends Component {
             window.location.reload()
         }
         this.setState({current: this.state.words[this.state.index].lang_1});
-        
-       
     }
+
     
     render() {
         const word = this.state.current
         console.log(this.state.current)
+
         return (
             <Wrapper>
-                <div>
-                    <h1>{word}</h1>
-                    <button onClick={this.handleClickNext.bind(this)}>Next Word</button>
+                <div class="row">
+                    <div class="column">
+                        <h1>German</h1>
+                        <Lang id="ger">{word}</Lang>
+                    </div>
+                    <div class="column">
+                        <h1>Spanish</h1>
+                        <Lang id="esp">Fill</Lang>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <Check>Check</Check>
+                    </div>
+                    <div class="column">
+                        <Next onClick={this.handleClickNext.bind(this)}>Next Word</Next>
+                    </div>
                 </div>
             </Wrapper>
                 

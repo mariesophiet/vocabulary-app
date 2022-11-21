@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+/* VocLearn styles */
+
+.column {
+  flex: 50%;
+}
+
+/* Clear floats after the columns */
+.row {
+  display: flex;
+  padding: 20px;
+}
+
