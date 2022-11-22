@@ -66,7 +66,7 @@ class VocabularyLearn extends Component {
     handleClickNext(){        
          // check if index gets too big -> we are at the end of our vocabulary list, reload
          if (!this.state.words[this.state.index + 1]){
-            window.confirm(
+            window.alert(
                 `You have reached the end of your vocabulary list!`,
             )
             this.setState({
@@ -74,13 +74,15 @@ class VocabularyLearn extends Component {
                 translation: '',
                 current: this.state.words.data.data[0].lang_1
             })
-            window.location.reload()
+            
         }
+        else {
         // clear possible translation from word before
         this.setState({
             current: this.state.words[this.state.index + 1].lang_1,
             index: this.state.index + 1,
-            translation: ''});        
+            translation: ''});    
+        }
     }
 
     // load translation of the current word
@@ -119,7 +121,6 @@ class VocabularyLearn extends Component {
                     </div>
                 </div>
             </Wrapper>
-                
         )
     }
 }

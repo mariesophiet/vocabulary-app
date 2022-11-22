@@ -22,7 +22,6 @@ const Delete = styled.div`
 class UpdateWord extends Component {
     updateUser = event => {
         event.preventDefault()
-
         window.location.href = `/vocabulary/update/${this.props.id}`
     }
 
@@ -30,10 +29,10 @@ class UpdateWord extends Component {
         return <Update onClick={this.updateUser}>Update</Update>
     }
 }
-// TODO: Find out why Delete throws error
+
 class DeleteWord extends Component {
-    deleteUser = event => {
-        event.preventDefault()
+    deleteUser = (event) => {
+        event.preventDefault();
 
         if (
             window.confirm(
@@ -41,7 +40,8 @@ class DeleteWord extends Component {
             )
         ) {
             api.deleteWord(this.props.id)
-            window.location.reload()
+            // .then fixes axios abort of DELETE in Firefox
+            .then(() => window.location.reload());
         }
     }
 
