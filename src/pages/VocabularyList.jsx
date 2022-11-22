@@ -102,6 +102,7 @@ class VocabularyList extends Component {
                 Header: 'Repeat',
                 accessor: 'repeat',
                 filterable: true,
+                // just diplay the date (without time)
                 Cell: props => dayjs(props.value).format('DD/MM/YYYY')
             },
             {

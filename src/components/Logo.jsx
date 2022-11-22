@@ -5,7 +5,9 @@ import logo from '../logo_books_gray.png'
 
 const Wrapper = styled.a.attrs({
     className: 'navbar-brand',
-})``
+})`
+padding: 5px;
+margin-left: 10px;`
 
 class Logo extends Component {
     render() {
