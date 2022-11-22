@@ -50,10 +50,11 @@ class VocabularyLearn extends Component {
     componentDidMount = async () => {
         this.setState({ isLoading: true,
          })
-
-        await api.getVocabulary().then(words => {
+         // get all words that have repeat date == today
+        await api.getVocabularyByDate().then(words => {
             this.setState({
                 words: words.data.data,
+                // set current always to the first word in the beginning
                 current: words.data.data[0].lang_1,
                 index: 0,
                 translation: '',

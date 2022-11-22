@@ -15,9 +15,7 @@ function App() {
                 <Route path="/vocabulary/create" exact component={VocabularyInsert} />
                 <Route
                     path="/vocabulary/update/:id"
-                    exact
-                    component={VocabularyUpdate}
-                />
+                    exact component={VocabularyUpdate} />
                 <Route path="/vocabulary/learn" exact component={VocabularyLearn} />
             </Switch>
         </Router>

@@ -6,6 +6,7 @@ const api = axios.create({
 
 export const createWord = payload => api.post(`/vocabulary`, payload)
 export const getVocabulary = () => api.get(`/vocabulary`)
+export const getVocabularyByDate = () => api.get(`/vocabulary/learn`)
 export const updateWord = (id, payload) => api.put(`/vocabulary/${id}`, payload)
 export const deleteWord = id => api.delete(`/vocabulary/${id}`)
 export const getWordById = id => api.get(`/vocabulary/${id}`)
@@ -15,6 +16,7 @@ const apis = {
     updateWord,
     deleteWord,
     getVocabulary,
+    getVocabularyByDate,
     getWordById
 }
 

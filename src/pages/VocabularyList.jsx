@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ReactTable from 'react-table'
 import api from '../api'
 
+import dayjs from 'dayjs'
+
 import styled from 'styled-components'
 
 import 'react-table/react-table.css'
@@ -100,10 +102,12 @@ class VocabularyList extends Component {
                 Header: 'Repeat',
                 accessor: 'repeat',
                 filterable: true,
+                Cell: props => dayjs(props.value).format('DD/MM/YYYY')
             },
             {
                 Header: 'Group',
                 accessor: 'group',
+                filterable: true,
                 Cell: props => <span>{props.value.join(' / ')}</span>,
             },
             {
