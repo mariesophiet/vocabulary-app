@@ -14,26 +14,38 @@ const Wrapper = styled.div`
 const Next = styled.div`
     cursor: pointer;
     padding: 20px;
-    background-color: #EBE1D2;
+    background-color: #8B8984;
+    border-radius: 10px;
+    color: white;
 `
 
 const Check = styled.div`
     cursor: pointer;
     padding: 20px;
-    background-color: #CEC2B0;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+
 `
 
 const Lang = styled.div`
     line-height: 250px;
-    background-color: #E2D6C3;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 25px;
+    border-color: grey;
     font-size: 40px;
     height: 250px;
+    border-radius: 15px;
 `
 
 const Show = styled.div`
     padding: 20px;
-    background-color: #CEC2B0;
+    background-color: black;
     cursor: pointer;
+    border-radius: 10px;
+    color: white;
+
 `
 
 class VocabularyLearn extends Component {

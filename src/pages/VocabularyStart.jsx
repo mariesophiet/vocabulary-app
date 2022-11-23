@@ -52,7 +52,7 @@ function Home() {
     </div>  
       <Row xs={1} md={2} className="g-4">
         <Col>
-          <Card>
+          <Card bg={"light"}>
             <Card.Body>
               <Card.Title>How to Insert your Words</Card.Title>
               <Card.Text>
@@ -64,7 +64,7 @@ function Home() {
           </Card>
           </Col>
           <Col>
-          <Card>
+          <Card bg={"light"}>
             <Card.Body>
               <Card.Title>How to Learn your Vocabulary</Card.Title>
               <Card.Text>

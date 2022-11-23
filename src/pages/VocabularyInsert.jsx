@@ -3,6 +3,11 @@ import api from '../api'
 
 import styled from 'styled-components'
 
+import Popover from 'react-bootstrap/Popover';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+
+
 const Title = styled.h1.attrs({
     className: 'h1',
 })``
@@ -34,6 +39,12 @@ const CancelButton = styled.a.attrs({
 })`
     margin: 15px 15px 15px 5px;
 `
+// for info field in level
+const popoverRight = (
+    <Popover id="popover-positioned-right" title="Popover right">
+      <strong>Holy guacamole!</strong> Check this info.
+    </Popover>
+  );
 
 class VocabularyInsert extends Component {
     constructor(props) {
@@ -42,7 +53,7 @@ class VocabularyInsert extends Component {
         this.state = {
             lang_1: '',
             lang_2: '',
-            level: '',
+            level: '1',
             repeat: '',
             group: '',
         }
@@ -56,11 +67,6 @@ class VocabularyInsert extends Component {
     handleChangeInputLang2 = async event => {
         const lang_2 = event.target.value
         this.setState({ lang_2 })
-    }
-
-    handleChangeInputLevel = async event => {
-        const level = event.target.value
-        this.setState({ level })
     }
 
     handleChangeInputRepeat = async event => {
@@ -82,7 +88,6 @@ class VocabularyInsert extends Component {
             this.setState({
                 lang_1: '',
                 lang_2: '',
-                level: '',
                 repeat: '',
                 group: ''
             })
@@ -95,28 +100,18 @@ class VocabularyInsert extends Component {
             <Wrapper>
                 <Title>Create Word</Title>
 
-                <Label>Deutsch: </Label>
+                <Label>German: </Label>
                 <InputText
                     type="text"
                     value={lang_1}
                     onChange={this.handleChangeInputLang1}
                 />
 
-                <Label>Spanisch: </Label>
+                <Label>Spanish: </Label>
                 <InputText
                     type="text"
                     value={lang_2}
                     onChange={this.handleChangeInputLang2}
-                />
-
-                <Label>Level: </Label>
-                <InputText
-                    type="number"
-                    min="1"
-                    max="5"
-                    pattern="[0-5]"
-                    value={level}
-                    onChange={this.handleChangeInputLevel}
                 />
 
                 <Label>Repeat: </Label>
