@@ -14,24 +14,25 @@ const Wrapper = styled.div`
 const Next = styled.div`
     cursor: pointer;
     padding: 20px;
-    background-color: pink;
+    background-color: #EBE1D2;
 `
+
 const Check = styled.div`
     cursor: pointer;
     padding: 20px;
-    background-color: #FF62DF;
+    background-color: #CEC2B0;
 `
 
 const Lang = styled.div`
     line-height: 250px;
-    background-color:#decddd;
+    background-color: #E2D6C3;
     font-size: 40px;
     height: 250px;
 `
 
 const Show = styled.div`
     padding: 20px;
-    background-color: red;
+    background-color: #CEC2B0;
     cursor: pointer;
 `
 
