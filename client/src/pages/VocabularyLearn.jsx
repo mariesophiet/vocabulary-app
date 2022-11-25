@@ -5,11 +5,10 @@ import api from '../api'
 import styled from 'styled-components'
 import '../App.css'
 
-import 'react-table/react-table.css'
 
 const Wrapper = styled.div`
-    padding: 0 40px 40px 40px;
-    text-align: center;
+    width: 80%;
+   
 `
 const Next = styled.div`
     cursor: pointer;
@@ -111,7 +110,8 @@ class VocabularyLearn extends Component {
         console.log(word)
 
         return (
-            <Wrapper>
+            <Wrapper className="position-absolute top-50 start-50 translate-middle text-center">
+                <div className="">
                 <div class="row">
                     <div class="column">
                         <h1>German</h1>
@@ -134,7 +134,9 @@ class VocabularyLearn extends Component {
                         <Show onClick={this.handleClickShow.bind(this)}>Show Translation</Show>
                     </div>
                 </div>
-            </Wrapper>
+                </div>
+                </Wrapper>
+            
         )
     }
 }

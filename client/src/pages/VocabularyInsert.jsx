@@ -15,7 +15,7 @@ const Title = styled.h1.attrs({
 const Wrapper = styled.div.attrs({
     className: 'form-group',
 })`
-    margin: 0 50px;
+    width: 80%;
 `
 
 const Label = styled.label`
@@ -97,7 +97,7 @@ class VocabularyInsert extends Component {
     render() {
         const { lang_1, lang_2, level, repeat, group } = this.state
         return (
-            <Wrapper>
+            <Wrapper className="position-absolute top-50 start-50 translate-middle">
                 <Title>Create Word</Title>
 
                 <Label>German: </Label>
