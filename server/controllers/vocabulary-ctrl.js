@@ -125,11 +125,7 @@ getVocabulary = async (req, res) => {
 
 // works with hardcoded date 
 getVocabularyByDate = async (req, res) => {
-    let today = new Date();
-    // hacky fix for setTime not working otherwise
-    let example = new Date("2022-11-22T00:00:00.000Z");
-    today.setTime(example.getTime());
-    await Vocabulary.find({ repeat: {$lte: today }}, (err, vocab) => {
+    await Vocabulary.find({ repeat: {$lte: new Date() }}, (err, vocab) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
