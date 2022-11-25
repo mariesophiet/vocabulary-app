@@ -9,7 +9,8 @@ import styled from 'styled-components'
 import 'react-table/react-table.css'
 
 const Wrapper = styled.div`
-    padding: 0 40px 40px 40px;
+    width: 80%;
+    max-width: 1500px;
 `
 const Update = styled.div`
     color: #ef9b0f;
@@ -141,7 +142,7 @@ class VocabularyList extends Component {
         }
 
         return (
-            <Wrapper>
+            <Wrapper className="position-absolute top-50 start-50 translate-middle">
                 {showTable && (
                     <ReactTable
                         data={words}

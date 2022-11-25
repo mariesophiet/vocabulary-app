@@ -16,6 +16,7 @@ const Wrapper = styled.div.attrs({
     className: 'form-group',
 })`
     width: 80%;
+    max-width: 1500px;
 `
 
 const Label = styled.label`

@@ -105,8 +105,7 @@ function Home() {
             </Card.Body>
           </Card>
         </Col>
-        </Row>
-      
+        </Row>   
     
     </div>
   );

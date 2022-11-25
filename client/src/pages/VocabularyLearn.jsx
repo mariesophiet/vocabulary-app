@@ -8,6 +8,7 @@ import '../App.css'
 
 const Wrapper = styled.div`
     width: 80%;
+    max-width: 1300px;
    
 `
 const Next = styled.div`
@@ -36,6 +37,7 @@ const Lang = styled.div`
     font-size: 40px;
     height: 250px;
     border-radius: 15px;
+    background-color: #F6F5E3;
 `
 
 const Show = styled.div`
